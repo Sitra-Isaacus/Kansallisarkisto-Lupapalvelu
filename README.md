@@ -53,13 +53,13 @@ Seuraavat kirjastot on sisällytetty git-säiliöön ja niitä ei tarvitse asent
 
         date.timezone = "Europe/Helsinki”
 
-4.	Luo lupapalvelun tietokanta suorittamalla data-kansiossa sijaitseva lupapalvelu.sql-skripti komennolla:
+4.	Luo lupapalvelun tietokanta suorittamalla src/data/db-kansiossa sijaitseva lupapalvelu.sql-skripti komennolla:
 
         mysql -u root -p tietokannan_nimi < lupapalvelu.sql
 
 5.	Muokkaa lupapalvelun konfiguraatiotiedostoja:
 
-    - data/_config.php:
+    - src/data/_config.php:
 
           define("DATA_SERVER", "192.168.104.250/lupapalvelu/data/");
 
@@ -71,7 +71,7 @@ Seuraavat kirjastot on sisällytetty git-säiliöön ja niitä ei tarvitse asent
 
          Määritä riveille asettamasi tietokannan nimi (oletusarvoisesti ”lupapalvelu”), tietokannan käyttäjänimi sekä tietokannan käyttäjätunnuksen salasana.
 
-    - logic/ _config.php:
+    - src/logic/ _config.php:
 
           define("LOGIC_SERVER", "192.168.104.250/lupapalvelu/logic/");
 
@@ -85,7 +85,7 @@ Seuraavat kirjastot on sisällytetty git-säiliöön ja niitä ei tarvitse asent
 
          Korvaa rivin oletusarvo tietokantapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä.
 
-    - presentation/_soap_config.php
+    - src/presentation/_soap_config.php
 
           define("LOGIC_SERVER", "192.168.104.250/lupapalvelu/logic/"); 
 
@@ -107,4 +107,4 @@ Sitra - https://www.sitra.fi/
 
 # Lisenssi
 
-Käyttölupapalvelu on lisensioitu Apache-2.0 lisenssillä.
+Lupapalvelu on lisensioitu Apache-2.0 lisenssillä.
