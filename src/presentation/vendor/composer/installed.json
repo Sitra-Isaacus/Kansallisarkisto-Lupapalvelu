@@ -1,0 +1,102 @@
+[
+    {
+        "name": "letsdrink/ouzo-goodies",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/letsdrink/ouzo-goodies.git",
+            "reference": "685f3bbd9066ccf732db70290d3b96b2bedffc69"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/letsdrink/ouzo-goodies/zipball/685f3bbd9066ccf732db70290d3b96b2bedffc69",
+            "reference": "685f3bbd9066ccf732db70290d3b96b2bedffc69",
+            "shasum": ""
+        },
+        "time": "2015-06-12T08:50:47+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ouzo\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ouzo developers",
+                "email": "ouzo-framework@googlegroups.com"
+            }
+        ],
+        "description": "Utility classes, test assertions and mocking framework extracted from Ouzo framework.",
+        "homepage": "http://ouzoframework.org/",
+        "keywords": [
+            "TDD",
+            "asserts",
+            "mock",
+            "php",
+            "test",
+            "utilities",
+            "utils"
+        ]
+    },
+    {
+        "name": "piotrooo/wsdl-creator",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/piotrooo/wsdl-creator.git",
+            "reference": "add6a96e11d4342be9af56ae05dd1d5a2f2e2270"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/piotrooo/wsdl-creator/zipball/add6a96e11d4342be9af56ae05dd1d5a2f2e2270",
+            "reference": "add6a96e11d4342be9af56ae05dd1d5a2f2e2270",
+            "shasum": ""
+        },
+        "require": {
+            "letsdrink/ouzo-goodies": "1.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.7.5",
+            "satooshi/php-coveralls": "dev-master",
+            "symfony/console": "v2.7.1"
+        },
+        "time": "2016-04-01T21:48:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "WSDL\\": "src/",
+                "Mocks\\": "tests/",
+                "Factory\\": "tests/",
+                "Clients\\": "examples/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Piotr Olaszewski",
+                "email": "piotroo89@gmail.com"
+            }
+        ],
+        "description": "PHP WSDL creator using PHPdoc (annotations, reflections).",
+        "keywords": [
+            "annotations",
+            "creator",
+            "generator",
+            "php",
+            "reflections",
+            "soap",
+            "wsdl"
+        ]
+    }
+]

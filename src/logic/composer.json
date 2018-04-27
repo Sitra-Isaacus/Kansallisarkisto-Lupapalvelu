@@ -1,0 +1,22 @@
+{
+    "name": "arkisto/fmas",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Arkisto",
+            "email": "info@narc.fi"
+        }
+    ],
+    "description": "lupapalvelu",
+    "require": {
+        "php": ">=5.3.0",
+        "spipu/html2pdf": "4.5.0",
+        "piotrooo/wsdl-creator": "^1.4"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+    }
+}
