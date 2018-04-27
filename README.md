@@ -4,48 +4,48 @@ Lupapalvelu on järjestelmä, jonka avulla tutkija voi hakea käyttölupaa sosia
 
 # Riippuvuudet
 
-•	PHP (>=5.3.3):
+- PHP (>=5.3.3):
 
-  o	php
-  o	php-cli
-  o	php-common
-  o	php-mysql
-  o	php-pdo
-  o	php-soap
-  o	php-xml
-  o	php-mbstring
-  o	php-memcached (https://github.com/php-memcached-dev/php-memcached)
+  - php
+  -	php-cli
+  -	php-common
+  -	php-mysql
+  -	php-pdo
+  -	php-soap
+  -	php-xml
+  -	php-mbstring
+  -	php-memcached (https://github.com/php-memcached-dev/php-memcached)
 
-•	MySQL (>=5.6.39)
+-	MySQL (>=5.6.39)
 
-•	Linux-paketit (CentOS):
+-	Linux-paketit (CentOS):
 
-  o	mail
-  o	sendmail
-  o	sendmail-cf
-  o	m4
-  o	libxml2
-  o	libxslt
+  -	mail
+  -	sendmail
+  -	sendmail-cf
+  -	m4
+  -	libxml2
+  -	libxslt
 
 Seuraavat kirjastot on sisällytetty git-säiliöön ja niitä ei tarvitse asentaa erikseen:
 
-•	PHP WSDL Creator (https://github.com/piotrooo/wsdl-creator)
+-	PHP WSDL Creator (https://github.com/piotrooo/wsdl-creator)
 
-•	TCPDF PHP PDF Library (https://tcpdf.org/)
+-	TCPDF PHP PDF Library (https://tcpdf.org/)
 
-•	Html2pdf (https://github.com/spipu/html2pdf)
+-	Html2pdf (https://github.com/spipu/html2pdf)
 
-•	jQuery (>= 1.10.2)
+-	jQuery (>= 1.10.2)
 
-  o	Datepicker (https://jqueryui.com/datepicker/)
+  -	Datepicker (https://jqueryui.com/datepicker/)
   
   # Asennus
   
 I.	Lataa lupapalvelun lähdekoodit asennuspalvelimelle. Jos asennat lupapalvelun hajautetusti useammalle palvelimelle (eri ohjelmistokerrokset eri palvelimelle), niin hae kansiot eri palvelimille seuraavasti:
 
-    a)	data-kansio tietokantapalvelimelle
-    b)	logic-kansio logiikkapalvelimelle
-    c)	presentation-kansio käyttöliittymäpalvelimelle
+   a)	data-kansio tietokantapalvelimelle
+   b)	logic-kansio logiikkapalvelimelle
+   c)	presentation-kansio käyttöliittymäpalvelimelle
 
 II.	Siirrä data-kansion, logic-kansion ja presentation-kansion sisällöt kunkin palvelimen web-kansion alle (yleensä oletusarvoisesti /var/www/html).
 
@@ -59,37 +59,37 @@ mysql -u root -p tietokannan_nimi < lupapalvelu.sql
 
 V.	Muokkaa lupapalvelun konfiguraatiotiedostoja:
 
-    a)	data/_config.php:
+   a)	data/_config.php:
 
-    define("DATA_SERVER", "192.168.104.250/lupapalvelu/data/");
+   define("DATA_SERVER", "192.168.104.250/lupapalvelu/data/");
 
-    Korvaa rivin oletusarvo tietokantapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä (josta       fmas_db_api.php-tiedosto löytyy).
+   Korvaa rivin oletusarvo tietokantapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä (josta       fmas_db_api.php-tiedosto löytyy).
 
-    define("DB_DATABASE_NAME", "lupapalvelu");
-    define("DB_USER_NAME", "KÄYTTÄJÄTUNNUS");
-    define("DB_PASSWORD", "SALASANA");
+   define("DB_DATABASE_NAME", "lupapalvelu");
+   define("DB_USER_NAME", "KÄYTTÄJÄTUNNUS");
+   define("DB_PASSWORD", "SALASANA");
 
-    Määritä riveille asettamasi tietokannan nimi (oletusarvoisesti ”lupapalvelu”), tietokannan käyttäjänimi sekä tietokannan käyttäjätunnuksen salasana.
+   Määritä riveille asettamasi tietokannan nimi (oletusarvoisesti ”lupapalvelu”), tietokannan käyttäjänimi sekä tietokannan käyttäjätunnuksen salasana.
 
-    b)	logic/ _config.php:
+   b)	logic/ _config.php:
 
-    define("LOGIC_SERVER", "192.168.104.250/lupapalvelu/logic/");
+   define("LOGIC_SERVER", "192.168.104.250/lupapalvelu/logic/");
 
-    Korvaa rivin oletusarvo logiikkapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä (josta fmas_business_logic.php-tiedosto löytyy).
+   Korvaa rivin oletusarvo logiikkapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä (josta fmas_business_logic.php-tiedosto löytyy).
 
-    define("PRESENTATION_SERVER", "192.168.104.250/lupapalvelu/presentation/");
+   define("PRESENTATION_SERVER", "192.168.104.250/lupapalvelu/presentation/");
 
-    Korvaa rivin oletusarvo käyttöliittymäpalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä (josta index.php löytyy).
+   Korvaa rivin oletusarvo käyttöliittymäpalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä (josta index.php löytyy).
 
-    riville define("DATA_SERVER", "192.168.104.250/lupapalvelu/data/");
+   riville define("DATA_SERVER", "192.168.104.250/lupapalvelu/data/");
 
-    Korvaa rivin oletusarvo tietokantapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä.
+   Korvaa rivin oletusarvo tietokantapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä.
 
-    c)	presentation/_soap_config.php
+   c)	presentation/_soap_config.php
 
-    define("LOGIC_SERVER", "192.168.104.250/lupapalvelu/logic/"); 
+   define("LOGIC_SERVER", "192.168.104.250/lupapalvelu/logic/"); 
 
-    Korvaa rivin oletusarvo (192.168.104.250/lupapalvelu/logic/) logiikkapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä.
+   Korvaa rivin oletusarvo (192.168.104.250/lupapalvelu/logic/) logiikkapalvelimesi IP-osoitteella tai DNS-nimellä sekä oikealla kansion nimellä.
 
 VI.	Muokkaa palvelimen sähköpostipalvelun (Sendmail) asetuksia, jotta lupapalvelu voi lähettää sähköpostiviestejä ulkoverkkoon. Sähköpostia lähettävän logiikkakerroksen palvelimen paikallisessa palomuurissa tulee sallia liikenne portin 25 kautta.
 
@@ -97,9 +97,9 @@ VII.	Käynnistä web-selain ja kirjoita osoiteriville käyttöliittymäpalvelime
 
 # Tunnetut bugit ja huomioon otettavaa
 
-•	Pääkäyttäjän lomake-editori on beta-vaiheessa oleva osa ohjelmistoa, joka vaatii jatkokehittämistä. 
-•	PDF-muotoisesta eettisestä lausuntopyynnöstä puuttuu osa lomakkeen tiedoista. 
-•	Käyttöliittymän lopullinen visuaalinen ilme on suunnittelematta ja se ei mukaudu mobiililaitteille.
+-	Pääkäyttäjän lomake-editori on beta-vaiheessa oleva osa ohjelmistoa, joka vaatii jatkokehittämistä. 
+-	PDF-muotoisesta eettisestä lausuntopyynnöstä puuttuu osa lomakkeen tiedoista. 
+-	Käyttöliittymän lopullinen visuaalinen ilme on suunnittelematta ja se ei mukaudu mobiililaitteille.
 
 # Yhteystiedot 
 
