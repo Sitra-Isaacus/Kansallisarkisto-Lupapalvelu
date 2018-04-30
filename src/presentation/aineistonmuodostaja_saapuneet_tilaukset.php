@@ -24,7 +24,7 @@ if(kayttaja_on_kirjautunut()){
 			
 			if(isset($_POST["tallenna_kasittelija"])){
 
-				$vastaus = suorita_logiikkakerroksen_funktio($api, "ota_aineistotilaus_kasittelyyn", array("aineistotilaus_id"=>$_POST["aineistotilaus_id"], "kasittelija"=>$_POST["kasittelija"], "kayt_id"=>$_SESSION["kayttaja_id"]));
+				$vastaus = suorita_logiikkakerroksen_funktio($api, "ota_aineistotilaus_kasittelyyn", array("token"=>$_SESSION["kayttaja_token"], "aineistotilaus_id"=>$_POST["aineistotilaus_id"], "kasittelija"=>$_POST["kasittelija"], "kayt_id"=>$_SESSION["kayttaja_id"]));
 
 				if(isset($vastaus["Aineistotilaus_kasittelyssa"]) && $vastaus["Aineistotilaus_kasittelyssa"]){
 					$huomio_vihrea = AINT_OT_KAS;
@@ -34,7 +34,7 @@ if(kayttaja_on_kirjautunut()){
 				
 			}
 			
-			$vastaus = suorita_logiikkakerroksen_funktio($api, "hae_saapuneet_aineistotilaukset", array("kayt_id"=>$kayt_id));
+			$vastaus = suorita_logiikkakerroksen_funktio($api, "hae_saapuneet_aineistotilaukset", array("token"=>$_SESSION["kayttaja_token"], "kayt_id"=>$kayt_id));
 			$hakemukset = $vastaus["HakemuksetDTO"]["Aineistotilaukset"];
 			if(isset($vastaus["Viranomaisen_roolitDTO_Aineistonmuodostajat"])) $aineistonmuodostajat = $vastaus["Viranomaisen_roolitDTO_Aineistonmuodostajat"];
 		

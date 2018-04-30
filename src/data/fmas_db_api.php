@@ -2720,7 +2720,7 @@ class fmas_db_api {
 			if(!is_null($hakemus_id) && !is_null($kayt_id)){
 				try {
 					if ($db = $this->_connectToDb()) {
-						if($dto["Istunto"]["Kayttaja"] = kayttajaAutentikoitu($db,array("kayttajan_rooli"=>"rooli_aineistonmuodostaja","hakemus_id"=>$hakemus_id, "kayt_id"=>$kayt_id))){
+						if($dto["Istunto"]["Kayttaja"] = kayttajaAutentikoitu($db,array("token"=>$parametrit["token"], "kayttajan_rooli"=>"rooli_aineistonmuodostaja","hakemus_id"=>$hakemus_id, "kayt_id"=>$kayt_id))){
 
 							$db->beginTransaction();
 
@@ -3092,7 +3092,7 @@ class fmas_db_api {
 			if(!is_null($aineistotilaus_id) && !is_null($kayt_id)){
 				try {
 					if ($db = $this->_connectToDb()) {
-						if($dto["Istunto"]["Kayttaja"] = kayttajaAutentikoitu($db,array("kayttajan_rooli"=>"rooli_aineistonmuodostaja", "kayt_id"=>$kayt_id))){
+						if($dto["Istunto"]["Kayttaja"] = kayttajaAutentikoitu($db,array("token"=>$parametrit["token"], "kayttajan_rooli"=>"rooli_aineistonmuodostaja", "kayt_id"=>$kayt_id))){
 
 							$db->beginTransaction();
 
@@ -5250,7 +5250,7 @@ class fmas_db_api {
 			if(!is_null($kayt_id)){
 				try {
 					if ($db = $this->_connectToDb()) {
-						if($dto["Istunto"]["Kayttaja"] =  kayttajaAutentikoitu($db,array("kayt_id"=>$kayt_id, "kayttajan_rooli"=>"rooli_aineistonmuodostaja"))){
+						if($dto["Istunto"]["Kayttaja"] =  kayttajaAutentikoitu($db,array("token"=>$parametrit["token"], "kayt_id"=>$kayt_id, "kayttajan_rooli"=>"rooli_aineistonmuodostaja"))){
 
 								$db->beginTransaction();
 
@@ -7436,7 +7436,7 @@ class fmas_db_api {
 			if(!is_null($hakemus_id) && !is_null($kayt_id)){
 				try {
 					if ($db = $this->_connectToDb()) {
-						if($dto["Istunto"]["Kayttaja"] = kayttajaAutentikoitu($db,array("hakemus_id"=>$hakemus_id, "kayt_id"=>$kayt_id, "kayttajan_rooli"=>"rooli_aineistonmuodostaja"))){
+						if($dto["Istunto"]["Kayttaja"] = kayttajaAutentikoitu($db,array("token"=>$parametrit["token"], "hakemus_id"=>$hakemus_id, "kayt_id"=>$kayt_id, "kayttajan_rooli"=>"rooli_aineistonmuodostaja"))){
 
 								$viranomaisen_rooliDTO = $dto["Istunto"]["Kayttaja"]->Viranomaisen_rooliDTO;
 

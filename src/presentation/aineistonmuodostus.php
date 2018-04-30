@@ -34,7 +34,7 @@ try {
 				$huomio_punainen = LIS_AINM_VA;								
 			} else {
 		
-				$kuittaus = suorita_logiikkakerroksen_funktio($api, "tallenna_aineistonmuodostus", array("hakemus_id"=>$hakemus_id, "data"=>$_POST, "kayt_id"=>$_SESSION["kayttaja_id"]));
+				$kuittaus = suorita_logiikkakerroksen_funktio($api, "tallenna_aineistonmuodostus", array("token"=>$_SESSION["kayttaja_token"], "hakemus_id"=>$hakemus_id, "data"=>$_POST, "kayt_id"=>$_SESSION["kayttaja_id"]));
 
 				if(isset($kuittaus["Aineistonmuodostus_tallennettu"]) && $kuittaus["Aineistonmuodostus_tallennettu"]){
 					$huomio_vihrea = AINT_MUOD_TALL;						
